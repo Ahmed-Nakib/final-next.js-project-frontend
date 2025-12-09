@@ -1,15 +1,18 @@
-import { Star } from "lucide-react"
+import { Star } from "lucide-react";
 
-const StarGroup = ({count}:{count: number}) => {
-  return (
-    <div className="flex gap-x-1 py-2">
-      {[1,2,3,4,5].map((data) => (
-        <div key={data}>
-            {data > count ? <Star /> : <Star className="text-primary"/> }
+function StarGroup({ count }: { count: number }) {
+
+
+    return (
+        <div className="flex gap-x-1 py-1">
+            {[1, 2, 3, 4, 5].map((data) => (
+                <div key={data}>
+                    {data > Math.floor(count) ? <Star size={16} /> : <Star className="text-primary" size={16} />}
+                </div>
+            ))}
+
         </div>
-      ))}
-    </div>
-  )
+    );
 }
 
-export default StarGroup
+export default StarGroup;

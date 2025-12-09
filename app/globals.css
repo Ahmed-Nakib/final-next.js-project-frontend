@@ -76,6 +76,7 @@
   --sidebar-accent-foreground: oklch(0.21 0.006 285.885);
   --sidebar-border: oklch(0.92 0.004 286.32);
   --sidebar-ring: oklch(0.841 0.238 128.85);
+  --color-body: #505050;
 }
 
 .dark {
@@ -122,6 +123,6 @@
   }
 
   .my-container {
-    @apply max-w-6xl mx-auto;
+    @apply max-w-6xl mx-auto px-4;
   }
 }

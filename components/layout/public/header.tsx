@@ -1,4 +1,5 @@
 import PublicMainMenu from "@/components/public/mainMenu";
+import Navbar from "@/components/public/Navbar";
 import { MapPin } from "lucide-react";
 import Link from "next/link";
 
@@ -7,9 +8,9 @@ function PublicHeader() {
         <>
             <div className="bg-primary py-2">
                 <div className="my-container">
-                    <div className="flex justify-between items-center">
+                    <div className="flex flex-col md:flex-row justify-between items-center">
                         <Link className="flex text-white" href={"/"}>
-                            <MapPin />
+                            <MapPin color="white" />
                             Track order
                         </Link>
                         <div className="flex gap-x-3 text-white">
@@ -20,6 +21,7 @@ function PublicHeader() {
                 </div>
             </div>
             <PublicMainMenu />
+            <Navbar />
         </>
     );
 }

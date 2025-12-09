@@ -4,13 +4,11 @@ import { ReactNode } from "react";
 
 function PublicMainLayout({ children }: { children: ReactNode }) {
 
-    console.log('hello');
-
 
     return (
         <div className="flex flex-col min-h-screen">
             <PublicHeader />
-            <div className="flex-1">
+            <div className="flex-1 bg-gray-100">
                 {children}
             </div>
             <PublicFooter />
