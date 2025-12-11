@@ -98,7 +98,7 @@ export default function Navbar() {
                                         <ChevronDown className="w-4 mt-1.5" />
                                     </Link>
 
-                                    <ul className="bg-white group-hover:opacity-100 opacity-0 invisible group-hover:visible p-3 shadow-xl absolute top-full left-0 w-40 border-t-3 border-t-primary">
+                                    <ul className="bg-white group-hover:opacity-100 opacity-0 invisible group-hover:visible p-3 shadow-xl absolute z-1 top-full left-0 w-40 border-t-3 border-t-primary">
                                         <li>
                                             <Link className="flex items-center gap-x-0.5 hover:text-primary" href={"/"}><ChevronRight width={20} />About us</Link>
                                         </li>

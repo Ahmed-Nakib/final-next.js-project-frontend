@@ -1,8 +1,12 @@
-import { Button } from "@/components/ui/button";
+import Service from "@/components/pages/home/service";
+import { Slider } from "@/components/pages/home/slider";
 
 export default function Home() {
 
   return (
-    <div></div>
+    <div>
+      <Slider />
+      <Service/>
+    </div>
   )
 }
