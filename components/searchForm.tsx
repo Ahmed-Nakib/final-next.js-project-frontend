@@ -30,7 +30,6 @@ function ProductSearchForm() {
 
     }, [text])
 
-
     return (
         <div className="px-6 flex-1">
             <div className="relative">

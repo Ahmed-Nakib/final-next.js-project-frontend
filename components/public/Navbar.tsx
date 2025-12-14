@@ -1,12 +1,10 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import MobileNavigation from "@/components/public/mobileNavigation";
 import { ChevronDown, ChevronRight, Menu } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import MobileNavigation from "./mobileNavigation";
 
 const menuData = [1, 2, 3, 4, 5]
 
@@ -124,6 +122,8 @@ export default function Navbar() {
                     </div>
                 </div>
             </div>
+
+
             <MobileNavigation />
         </>
     )

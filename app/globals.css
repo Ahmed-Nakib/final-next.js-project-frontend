@@ -125,7 +125,8 @@
   .my-container {
     @apply max-w-6xl mx-auto px-4;
   }
-  .btn-animate{
-    @apply relative z-1 text-white before:w-full before:h-full before:absolute before:top-0 before:left-0 before:bg-black before:-z-1 before:scale-x-0 hover:before:scale-x-100 before:duration-300 before:origin-left overflow-hidden
+
+  .btn-animate {
+    @apply relative z-1 hover:text-white before:w-full before:h-full before:absolute before:top-0 before:left-0 before:bg-black before:-z-1 before:scale-x-0 hover:before:scale-x-100 before:duration-300 before:origin-left overflow-hidden;
   }
 }
