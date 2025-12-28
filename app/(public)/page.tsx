@@ -1,5 +1,5 @@
 import DealOfWeek from "@/components/pages/home/dealOfWeek";
-import PopularCategorySlider from "@/components/pages/home/popularCategorySlider";
+import PopularCategory from "@/components/pages/home/popularCategory";
 import Service from "@/components/pages/home/service";
 import Slider from "@/components/pages/home/slider";
 import OfferCart from "@/components/share/offerCart";
@@ -11,12 +11,13 @@ export default function Home() {
       <Slider />
       <Service />
       <DealOfWeek />
-      <PopularCategorySlider />
-      <div className="my-container mx-auto flex justify-between gap-x-4">
+      <div className="my-container mx-auto grid grid-cols-1 md:grid-cols-3 gap-3.5">
         <OfferCart/>
         <OfferCart/>
         <OfferCart/>
       </div>
+
+      <PopularCategory/>
     </>
   )
 }
