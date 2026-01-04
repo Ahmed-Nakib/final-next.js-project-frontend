@@ -23,21 +23,19 @@ const categories: ICategories[] = [
         title: "Beauty & Personal Care"
     },
 ]
-const PopularCategory = () => {
+const FlitterProduct = () => {
 
     const [categoryId, setCategoryId]= useState<string>(categories[0]?.id);
 
 
   return (
     <>
-       <div className="my-container mt-12">
-            <div className="flex flex-col md:flex-row items-start md:items-center border-b-2 border-gray-200">
-                <h2 className="text-2xl font-semibold py-2">
-                    <span className="border-b-2 border-primary  -mb-0.5 py-2">Popular Category</span>
-                </h2>
+       <div className="my-container">
+            <div className="flex flex-col md:flex-row items-start md:items-centers">
+                
 
-                <div className='md:ml-auto'>
-                    <div className='flex flex-wrap justify-center gap-x-5 -mb-2.5'>
+                <div className='w-full'>
+                    <div className='flex flex-wrap md:justify-start justify-center gap-x-5 -mb-2.5'>
                         {
                           categories.map((cat) => (
                               <button
@@ -63,4 +61,4 @@ const PopularCategory = () => {
   )
 }
 
-export default PopularCategory
+export default FlitterProduct

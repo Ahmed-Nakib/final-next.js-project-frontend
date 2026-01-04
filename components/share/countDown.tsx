@@ -64,7 +64,7 @@ export default function CountDown({ variation, targetDate }: { targetDate: any; 
                     {Object.keys(count).map((item, index) => (
                         <div key={index} className="bg-primary flex justify-center items-center flex-col w-10 rounded-[3px] overflow-hidden">
                             <p className="text-sm w-full text-center text-white">{count[item as keyof typeof count]}</p>
-                            <span className="block w-full text-center text-xs py-0.5 bg-white">Days</span>
+                            <span className="block w-full text-center text-xs py-0.5 bg-white">{item}</span>
                         </div>
                     ))}
 
