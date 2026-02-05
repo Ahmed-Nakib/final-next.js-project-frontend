@@ -1,3 +1,4 @@
+import ProductFilterTop from "@/components/pages/shop/productFilterTop";
 import PageBreadCrumb from "@/components/share/pageBreadCrumb";
 import { IBreadCrumb } from "@/type/type";
 
@@ -20,6 +21,7 @@ function ShopPage() {
     return ( 
         <>
           <PageBreadCrumb pages={page}/>
+          <ProductFilterTop />
         </>
      );
 }
