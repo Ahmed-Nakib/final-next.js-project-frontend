@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
-import { InputGroup, InputGroupAddon, InputGroupInput } from "@/components/ui/input-group";
+import { Input } from "@/components/ui/input";
+import { InputGroup, InputGroupAddon } from "@/components/ui/input-group";
 import { ChevronRight, Facebook, Linkedin, MailIcon, Twitter, Youtube } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -85,7 +86,7 @@ function PublicFooter() {
 
                         <form>
                             <InputGroup className="rounded-none">
-                                <InputGroupInput placeholder="Your email" />
+                                <Input  className="focus:outline-0 border-0"/>
                                 <InputGroupAddon>
                                     <MailIcon />
                                 </InputGroupAddon>

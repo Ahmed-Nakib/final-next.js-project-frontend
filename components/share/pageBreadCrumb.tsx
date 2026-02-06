@@ -32,14 +32,14 @@ const PageBreadCrumb = ({ pages }: { pages: IBreadCrumb[] }) => {
               );
             }
             return (
-              <>
-                <BreadcrumbItem key={index}>
+              <React.Fragment key={index}>
+                <BreadcrumbItem>
                   <BreadcrumbLink href={page.href ? page.href : "/"}>
                     {page.label}
                   </BreadcrumbLink>
                 </BreadcrumbItem>
                 <BreadcrumbSeparator />
-              </>
+              </React.Fragment>
             );
           })}
         </BreadcrumbList>
