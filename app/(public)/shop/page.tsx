@@ -17,11 +17,14 @@ const page: IBreadCrumb[] = [
     }
 ]
 
-function ShopPage() {
+async function ShopPage({searchParams}: {searchParams: Promise<{filter: string}>}) {
+
+    const {filter}= await searchParams;
     return ( 
         <>
           <PageBreadCrumb pages={page}/>
           <ProductFilterTop />
+          {filter}
         </>
      );
 }

@@ -6,18 +6,44 @@ import {
   DropdownMenuContent,
   DropdownMenuGroup,
   DropdownMenuItem,
-  DropdownMenuLabel,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { ChevronDown, Funnel, Grid2X2, List,  } from "lucide-react";
+import { ChevronDown, Funnel, Grid2X2, List } from "lucide-react";
+import { useRouter, useSearchParams } from "next/navigation";
 import React, { useState } from "react";
 
 const ProductFilterTop = () => {
+  const router = useRouter();
+  const searchParams = useSearchParams();
 
-    const [view, setView] = useState("grid")
-    const viewHandler = (text: string)=>{
-        setView(text)
+  const handleFilter = (text: string) => {
+    const params = new URLSearchParams(searchParams.toString())
+    if (text == "All products") {
+      params.delete("filter");
     }
+    else{
+      params.set("filter", text);
+    }
+    router.push(`?${params.toString()}`);
+  };
+
+  const handlePriceShort = (text: string) => {
+    const params = new URLSearchParams(searchParams.toString());
+
+    if (text === "default") {
+    params.delete("price_short");
+  } else {
+    params.set("price_short", text);
+  }
+
+    router.push(`?${params.toString()}`);
+  };
+
+
+  const [view, setView] = useState("grid");
+  const viewHandler = (text: string) => {
+    setView(text);
+  };
   return (
     <div className="my-container pt-12 pb-6">
       <div className="bg-white p-4 flex gap-x-2">
@@ -28,11 +54,21 @@ const ProductFilterTop = () => {
           </DropdownMenuTrigger>
           <DropdownMenuContent>
             <DropdownMenuGroup>
-              <DropdownMenuLabel>All products</DropdownMenuLabel>
-              <DropdownMenuItem>Featured</DropdownMenuItem>
-              <DropdownMenuItem>Best sellers</DropdownMenuItem>
-              <DropdownMenuItem>Top rated</DropdownMenuItem>
-              <DropdownMenuItem>New Arrival</DropdownMenuItem>
+              <DropdownMenuItem onClick={() => handleFilter("All products")}>
+                All products
+              </DropdownMenuItem>
+              <DropdownMenuItem onClick={() => handleFilter("Featured")}>
+                Featured
+              </DropdownMenuItem>
+              <DropdownMenuItem onClick={() => handleFilter("Best sellers")}>
+                Best sellers
+              </DropdownMenuItem>
+              <DropdownMenuItem onClick={() => handleFilter("Top rated")}>
+                Top rated
+              </DropdownMenuItem>
+              <DropdownMenuItem onClick={() => handleFilter("New Arrival")}>
+                New Arrival
+              </DropdownMenuItem>
             </DropdownMenuGroup>
           </DropdownMenuContent>
         </DropdownMenu>
@@ -46,9 +82,9 @@ const ProductFilterTop = () => {
             </DropdownMenuTrigger>
             <DropdownMenuContent>
               <DropdownMenuGroup>
-                <DropdownMenuLabel>All products</DropdownMenuLabel>
-                <DropdownMenuItem>Low - High price</DropdownMenuItem>
-                <DropdownMenuItem>High - Low price</DropdownMenuItem>
+                <DropdownMenuItem onClick={()=> handlePriceShort("default")}>Default</DropdownMenuItem>
+                <DropdownMenuItem onClick={()=> handlePriceShort("Low - High price")}>Low - High price</DropdownMenuItem>
+                <DropdownMenuItem onClick={()=> handlePriceShort("High - Low price")}>High - Low price</DropdownMenuItem>
               </DropdownMenuGroup>
             </DropdownMenuContent>
           </DropdownMenu>
@@ -56,8 +92,20 @@ const ProductFilterTop = () => {
 
         <div className="ml-auto">
           <ButtonGroup>
-            <Button onClick={()=> viewHandler("grid")} variant={view == "grid" ? "default" : "outline"} className="cursor-pointer"><Grid2X2 size={16} /></Button>
-            <Button onClick={()=>viewHandler("list")} variant={view == "list" ? "default" : "outline"} className="cursor-pointer"><List size={16} /></Button>
+            <Button
+              onClick={() => viewHandler("grid")}
+              variant={view == "grid" ? "default" : "outline"}
+              className="cursor-pointer"
+            >
+              <Grid2X2 size={16} />
+            </Button>
+            <Button
+              onClick={() => viewHandler("list")}
+              variant={view == "list" ? "default" : "outline"}
+              className="cursor-pointer"
+            >
+              <List size={16} />
+            </Button>
           </ButtonGroup>
         </div>
       </div>
